@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+    <string name="what_needs_to_be_done">What needs to be done?</string>
+    <string name="enter_task">Enter task</string>
+    <string name="time">Time</string>
+    <string name="date_not_set">Date not set</string>
+    <string name="time_not_set">Time not set</string>
+    <string name="priority">Priority</string>
+    <string name="medium">Medium</string>
+    <string name="add_to_the_list">Add to the list</string>
+    <string name="by_default">By default</string>
+    <string name="is_the_task_finished">Is the task finished?</string>
+    <string name="list_empty">List is empty</string>
+    <string name="new_task">New task</string>
+    <string name="edit_task">Edit task</string>
+    <string name="delete">Delete</string>
+    <string name="list_name">List name</string>
+</resources>

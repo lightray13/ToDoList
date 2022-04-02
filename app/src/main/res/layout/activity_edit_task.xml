@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.todo.list.ui.editTask.EditTaskViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context=".ui.editTask.EditTaskActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarUpdate"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            app:title="@string/edit_task"
+            app:titleTextColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/dark_blue" />
+
+        <TextView
+            android:id="@+id/tv_need_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="128dp"
+            android:text="@string/what_needs_to_be_done"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarUpdate"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/etTaskUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginEnd="33dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:hint="@string/enter_task"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_need_done" />
+
+        <CheckBox
+            android:id="@+id/completedImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etTaskUpdate" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:text="@string/is_the_task_finished"
+            app:layout_constraintStart_toEndOf="@+id/completedImage"
+            app:layout_constraintTop_toTopOf="@id/completedImage"
+            app:layout_constraintBottom_toBottomOf="@id/completedImage"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="33dp"
+            android:text="@string/time"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/completedImage" />
+
+        <ImageView
+            android:id="@+id/ivDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="33dp"
+            android:layout_marginStart="33dp"
+            android:src="@drawable/baseline_edit_calendar"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/etDateUpdate"
+            app:layout_constraintBottom_toBottomOf="@id/etDateUpdate" />
+
+        <EditText
+            android:id="@+id/etDateUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:enabled="false"
+            android:clickable="true"
+            android:focusable="true"
+            android:hint="@string/date_not_set"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivDate"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time" />
+
+        <ImageView
+            android:id="@+id/ivTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="33dp"
+            android:layout_marginStart="33dp"
+            android:src="@drawable/baseline_access_time"
+            app:layout_constraintTop_toBottomOf="@+id/etDateUpdate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/etTimeUpdate"
+            app:layout_constraintBottom_toBottomOf="@id/etTimeUpdate" />
+
+        <EditText
+            android:id="@+id/etTimeUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:enabled="false"
+            android:clickable="true"
+            android:focusable="true"
+            android:hint="@string/time_not_set"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivTime"
+            app:layout_constraintTop_toBottomOf="@+id/etDateUpdate" />
+
+        <TextView
+            android:id="@+id/tv_priority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="33dp"
+            android:text="@string/priority"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etTimeUpdate" />
+
+        <com.skydoves.powerspinner.PowerSpinnerView
+            android:id="@+id/prioritySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginEnd="33dp"
+            android:gravity="center"
+            android:hint="@string/medium"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:spinner_arrow_gravity="end"
+            app:spinner_arrow_padding="8dp"
+            app:spinner_divider_show="true"
+            app:spinner_divider_size="0.4dp"
+            app:spinner_popup_animation="dropdown"
+            app:spinner_popup_elevation="14dp"
+            app:spinner_popup_background="@color/dark_blue"
+            app:layout_constraintTop_toBottomOf="@+id/tv_priority"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_add_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:layout_marginStart="33dp"
+            android:text="@string/add_to_the_list"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/prioritySpinner" />
+
+        <com.skydoves.powerspinner.PowerSpinnerView
+            android:id="@+id/listSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:hint="@string/by_default"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:spinner_arrow_gravity="end"
+            app:spinner_arrow_padding="8dp"
+            app:spinner_divider_show="true"
+            app:spinner_divider_size="0.4dp"
+            app:spinner_popup_animation="dropdown"
+            app:spinner_popup_elevation="14dp"
+            app:spinner_popup_background="@color/dark_blue"
+            app:layout_constraintTop_toBottomOf="@+id/tv_add_list"
+            app:layout_constraintEnd_toStartOf="@+id/ivAddTasks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivAddTasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="33dp"
+            android:layout_marginStart="33dp"
+            android:src="@drawable/baseline_playlist_add"
+            app:layout_constraintTop_toBottomOf="@+id/tv_add_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/listSpinner"
+            app:layout_constraintBottom_toBottomOf="@id/listSpinner" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabUpdateTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@drawable/baseline_done"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

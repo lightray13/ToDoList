@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.20092592592592592" />
+        <entry key="app/src/main/res/drawable/background.xml" value="0.2601851851851852" />
+        <entry key="app/src/main/res/drawable/baseline_circle_critical.xml" value="0.20092592592592592" />
+        <entry key="app/src/main/res/drawable/baseline_circle_medium.xml" value="0.20092592592592592" />
+        <entry key="app/src/main/res/drawable/baseline_shop.xml" value="0.20092592592592592" />
+        <entry key="app/src/main/res/drawable/item_background.xml" value="0.17777777777777778" />
+        <entry key="app/src/main/res/layout/activity_edit_task.xml" value="0.24918559494812997" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_new_task.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/edit_text_layout.xml" value="0.13269927536231885" />
+        <entry key="app/src/main/res/layout/item_task_list.xml" value="0.14488348530901723" />
+        <entry key="app/src/main/res/menu/edit_task_menu.xml" value="0.2140625" />
+        <entry key="app/src/main/res/menu/new_task_menu.xml" value="0.2140625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
